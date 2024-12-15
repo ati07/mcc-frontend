@@ -19,6 +19,7 @@ import ForgotPassword from './ForgotPassword';
 import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons';
 import AppTheme from './theme/AppTheme';
 import ColorModeSelect from './theme/ColorModeSelect';
+import { toast } from 'react-toastify';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -110,18 +111,11 @@ export default function LoginPage({ baseUrl }:any) {
           window.location.href = "/schedule";
         }
       } catch (error) {
-        alert("Login failed!");
+        // alert("Login failed!");
+        toast.error("Login failed!");
       }
     }
-    // if (emailError || passwordError) {
-    //   event.preventDefault();
-    //   return;
-    // }
-    // const data = new FormData(event.currentTarget);
-    // console.log({
-    //   email: data.get('email'),
-    //   password: data.get('password'),
-    // });
+    
   };
   return (
     <AppTheme >

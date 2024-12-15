@@ -41,8 +41,7 @@ export default function Employees({
           "Basic " + JSON.parse(localStorage.getItem("user") as any).token,
         "Content-Type": "application/json",
       },
-    });
-    if (response.data.success) {
+    }).then((response:any)=>{
       setEmployees(
         response.data.result.map((i: any) => {
           return { id: i.sno, ...i };
@@ -50,11 +49,24 @@ export default function Employees({
       );
       // toast.success("Employee created successfully!")
       setLoading(false);
-    }else{
+    }).catch((error:any)=>{
       window.location.href = "/";
       setLoading(false);
       toast.error("Please Login again!")
-    }
+    });
+    // if (response.data.success) {
+    //   setEmployees(
+    //     response.data.result.map((i: any) => {
+    //       return { id: i.sno, ...i };
+    //     })
+    //   );
+    //   // toast.success("Employee created successfully!")
+    //   setLoading(false);
+    // }else{
+    //   window.location.href = "/";
+    //   setLoading(false);
+    //   toast.error("Please Login again!")
+    // }
   };
 
 
