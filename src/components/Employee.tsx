@@ -57,19 +57,7 @@ export default function Employees({
       setLoading(false);
       toast.error("Please Login again!")
     });
-    // if (response.data.success) {
-    //   setEmployees(
-    //     response.data.result.map((i: any) => {
-    //       return { id: i.sno, ...i };
-    //     })
-    //   );
-    //   // toast.success("Employee created successfully!")
-    //   setLoading(false);
-    // }else{
-    //   window.location.href = "/";
-    //   setLoading(false);
-    //   toast.error("Please Login again!")
-    // }
+    
   };
 
 

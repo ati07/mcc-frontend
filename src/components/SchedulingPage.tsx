@@ -142,8 +142,8 @@ const SchedulingPage = ({ baseUrl }: any) => {
     }
     
     if (response.data.success) {
-      setRefetch(true);
       setOpen(false);
+      setRefetch(true);
       setLoading(false);
       setId('')
       toast.success("Success Notification !");
