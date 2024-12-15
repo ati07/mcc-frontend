@@ -27,6 +27,7 @@ import {
 import Textarea from '@mui/joy/Textarea';
 import Header from "./Header";
 import { toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -51,7 +52,7 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const SchedulingPage = ({ baseUrl }: any) => {
   const [selectedEmployees, setSelectedEmployees] = useState<any>([]);
-
+  const navigate = useNavigate()
   const [scheduleDate, setScheduleDate] = React.useState<Dayjs | null>(dayjs(new Date( new Date().getTime() + 60*60*1000)));
   const [scheduleComment, setScheduleComment] = useState("");
   const [loading, setLoading] = useState(false);
@@ -161,11 +162,6 @@ const SchedulingPage = ({ baseUrl }: any) => {
     }else{
       toast.warn('Comment cannot exceed 200 characters!')
     }
-    // if(scheduleComment.length > 200){
-      
-    // }else{
-      
-    // }
     
     
   }
