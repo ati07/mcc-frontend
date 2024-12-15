@@ -122,7 +122,7 @@ export default function LoginPage({ baseUrl }:any) {
   };
   return (
     <AppTheme >
-      <CssBaseline enableColorScheme />
+      <CssBaseline enableColorScheme={false} />
       <SignInContainer direction="column" justifyContent="space-between">
         {/* <ColorModeSelect sx={{ position: 'fixed', top: '1rem', right: '1rem' }} /> */}
         <Card variant="outlined">
