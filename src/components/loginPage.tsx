@@ -20,6 +20,7 @@ import { GoogleIcon, FacebookIcon, SitemarkIcon } from './CustomIcons';
 import AppTheme from './theme/AppTheme';
 import ColorModeSelect from './theme/ColorModeSelect';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const Card = styled(MuiCard)(({ theme }) => ({
   display: 'flex',
@@ -64,6 +65,7 @@ const SignInContainer = styled(Stack)(({ theme }) => ({
 }));
 
 export default function LoginPage({ baseUrl }:any) {
+  const navigate = useNavigate()
   const [emailError, setEmailError] = React.useState(false);
   const [emailErrorMessage, setEmailErrorMessage] = React.useState('');
   const [passwordError, setPasswordError] = React.useState(false);
@@ -108,7 +110,8 @@ export default function LoginPage({ baseUrl }:any) {
         if (response.data.success) {
           // setIsAuthenticated(true);
           localStorage.setItem("user", JSON.stringify(response.data.result));
-          window.location.href = "/schedule";
+          // window.location.href = "/schedule";
+          navigate('/schedule')
         }
       } catch (error) {
         // alert("Login failed!");

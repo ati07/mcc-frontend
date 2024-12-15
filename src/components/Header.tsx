@@ -21,6 +21,7 @@ import ColorModeSelect from './theme/ColorModeSelect';
 
 
 export default function Header() {
+  const navigate = useNavigate()
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -45,6 +46,7 @@ export default function Header() {
     setMobileMoreAnchorEl(event.currentTarget);
   };
   const [login,seLogin] = React.useState(false)
+  
   const handleLogout = ()=>{
     // Logout logic here
     console.log('logout clicked');
@@ -52,6 +54,7 @@ export default function Header() {
     setAnchorEl(null);
     handleMobileMenuClose();
     window.location.href = "/";
+    navigate('/')
     seLogin(false)
   }
 
@@ -110,11 +113,12 @@ export default function Header() {
   );
 //   let login = false;
   
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   React.useEffect(()=>{
     if(!localStorage.getItem('user')){
-      window.location.href = "/";
+      // window.location.href = "/";
+      navigate('/')
     }
 
   },[])

@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { Backdrop, CircularProgress, Tooltip } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from "react-router-dom";
 
 // const rows = [
 // [
@@ -30,6 +31,7 @@ export default function Employees({
   setOpen,
   setId
 }: any) {
+  const navigate = useNavigate()
   const [rows, setEmployees] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState(false);
 
@@ -50,7 +52,8 @@ export default function Employees({
       // toast.success("Employee created successfully!")
       setLoading(false);
     }).catch((error:any)=>{
-      window.location.href = "/";
+      // window.location.href = "/";
+      navigate('/')
       setLoading(false);
       toast.error("Please Login again!")
     });
