@@ -1,0 +1,38 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  /* text-align: center; */
+  width: 100%
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: aliceblue
+}
+
+.login-page, .scheduling-page {
+  margin: 20px auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+.employee-list, .schedule-details {
+  margin-bottom: 20px;
+  height: 100%;
+}
+
+button {
+  background-color: #007bff ;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-image:none !important;
+  box-shadow:none !important;
+  border:none !important
+}
+
+button:hover {
+  background-color: #0056b3;
+}
